@@ -136,7 +136,7 @@ jobs:
             const isReview = /^\[review\]/i.test(trimmed);
             const isAnswer = /^\[answer\]/i.test(trimmed);
 
-            if (isReview && commentAuthor !== prAuthor) {
+            if (isReview) {
               // Reviewer left a [review] comment → PR author must respond
               await setStatusLabel(prNumber, LABEL_WAITING_AUTHOR);
             } else if (isAnswer) {
